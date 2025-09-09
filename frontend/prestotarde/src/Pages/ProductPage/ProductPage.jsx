@@ -729,6 +729,10 @@ function ProductsPage() {
   const debouncedSearchQuery = useDebounce(searchQuery, 300)
   const debouncedPriceRange = useDebounce(priceRange, 500)
 
+  useEffect(()=>{
+    window.scrollTo(0,0)
+  },[])
+
   const filteredProducts = useMemo(() => {
     return productsdata.filter((product) => {
       const matchesSearch = product.name.toLowerCase().includes(debouncedSearchQuery.toLowerCase())
@@ -818,6 +822,9 @@ function ProductsPage() {
       [section]: !prev[section],
     }))
   }
+
+
+  
 
   const getGridClasses = () => {
     switch (gridLayout) {
