@@ -823,6 +823,9 @@ function ProductsPage() {
     }))
   }
 
+
+  
+
   const getGridClasses = () => {
     switch (gridLayout) {
       case "2":
