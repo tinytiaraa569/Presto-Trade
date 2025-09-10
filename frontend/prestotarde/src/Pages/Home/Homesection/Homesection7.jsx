@@ -89,7 +89,7 @@ const BestSellerSlider = () => {
         {/* Header Section */}
        <motion.div className="text-center mb-5" variants={titleVariants}>
           <motion.h1
-            className="text-3xl font-bold  text-balance"
+            className="text-2xl md:text-3xl font-bold  text-balance"
             whileHover={{ scale: 1.02 }}
             transition={{ type: "spring", stiffness: 300, damping: 20 }}
           >
@@ -159,7 +159,11 @@ const BestSellerSlider = () => {
               bulletActiveClass: "swiper-pagination-bullet-active !bg-slate-900 !opacity-100",
             }}
             breakpoints={{
-                340: {
+                350: {
+                slidesPerView: 1,
+                spaceBetween: 10,
+              },
+               400: {
                 slidesPerView: 2,
                 spaceBetween: 10,
               },

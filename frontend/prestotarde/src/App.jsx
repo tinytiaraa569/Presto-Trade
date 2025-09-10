@@ -6,6 +6,7 @@ import Lenis from "@studio-freight/lenis";
 import { useEffect, useRef } from "react";
 import Footer from "./Pages/Footer/Footer";
 import ProductPage from "./Pages/ProductPage/ProductPage";
+import DiamondPage from "./Pages/DiamondPage/DiamondPage";
 
 
 function App() {
@@ -53,6 +54,9 @@ function App() {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/products" element={<ProductPage />} />
+
+      <Route path="/diamonds" element={<DiamondPage />} />
+
 
     </Routes>
 

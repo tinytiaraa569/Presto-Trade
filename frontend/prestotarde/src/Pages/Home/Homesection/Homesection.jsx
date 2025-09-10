@@ -642,7 +642,7 @@ function SocialIcon({ label, icon }) {
     </a>
   )
 }
-export default function HomesectionVariants({ variant = 2, slides = defaultSlides, loop = false }) {
+export default function HomesectionVariants({ variant = 2, slides = defaultSlides, loop = true }) {
   const [index, setIndex] = useState(0)
   const [direction, setDirection] = useState(1)
   const [isPaused, setIsPaused] = useState(false)
@@ -805,8 +805,8 @@ export default function HomesectionVariants({ variant = 2, slides = defaultSlide
           </div>
 
           {/* Copy + CTAs */}
-          <div className="relative z-20 mx-auto flex h-full max-w-7xl items-center px-6 md:px-10">
-            <div className="flex max-w-3xl flex-col text-left px-6 md:px-10">
+          <div className="relative z-20 mx-auto flex h-full max-w-7xl items-center px-2 md:px-10">
+            <div className="flex max-w-3xl flex-col text-left px-2 md:px-10">
               <motion.div
                 initial={{ opacity: 0, y: 18 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -820,7 +820,7 @@ export default function HomesectionVariants({ variant = 2, slides = defaultSlide
                 <AnimatedTitle
                   key={index}
                   text={slides[index]?.title || ""}
-                  className="text-pretty text-4xl font-extrabold leading-tight text-white drop-shadow-sm md:text-6xl lg:text-7xl"
+                  className="text-pretty text-3xl font-extrabold leading-tight text-white drop-shadow-sm md:text-6xl lg:text-7xl"
                 />
                 <motion.span
                   key={`underline-${index}`}
@@ -846,7 +846,7 @@ export default function HomesectionVariants({ variant = 2, slides = defaultSlide
                   href="#"
                   whileHover={{ y: -2 }}
                   whileTap={{ scale: 0.98 }}
-                  className="group inline-flex items-center gap-3 rounded-full border border-white/40 px-5 py-3 text-sm font-medium text-white transition-colors hover:border-white hover:bg-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-black"
+                  className="group inline-flex items-center gap-3 rounded-full border border-white/40 px-4 py-1 sm:px-5 sm:py-3 text-sm font-medium text-white transition-colors hover:border-white hover:bg-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-black"
                   aria-label={slides[index]?.ctaPrimary || "Primary action"}
                 >
                   <span>{slides[index]?.ctaPrimary || "Shop Now"}</span>
@@ -861,7 +861,7 @@ export default function HomesectionVariants({ variant = 2, slides = defaultSlide
                   href="#"
                   whileHover={{ y: -2 }}
                   whileTap={{ scale: 0.98 }}
-                  className="rounded-full border border-white/45 bg-white/5 px-5 py-3 text-sm font-medium text-white backdrop-blur-sm transition-colors hover:bg-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-black"
+                  className="rounded-full border border-white/45 bg-white/5 px-4 py-1 sm:px-5 sm:py-3 text-sm font-medium text-white backdrop-blur-sm transition-colors hover:bg-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-black"
                   aria-label={slides[index]?.ctaSecondary || "Secondary action"}
                 >
                   {slides[index]?.ctaSecondary || "View Details"}

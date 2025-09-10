@@ -4497,6 +4497,7 @@ const Navbar = ({ className }) => {
       key: "diamond",
       label: "Diamond",
       rightimgurl: "https://images.pexels.com/photos/30328042/pexels-photo-30328042.jpeg",
+      url:"/diamonds"
     },
     {
       key: "collections",

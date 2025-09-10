@@ -249,10 +249,10 @@ const ElegantAccordionOriginal = () => {
       >
 
        <motion.div className="text-center mb-4" variants={headerVariants}>
-          <motion.h1 className="text-3xl font-bold" variants={headerVariants}>
+          <motion.h1 className="text-2xl md:text-3xl font-bold" variants={headerVariants}>
           Jewelry Categories
         </motion.h1>
-        <motion.p variants={headerVariants} transition={{ delay: 0.1 }}>
+        <motion.p variants={headerVariants} transition={{ delay: 0.1 }} className="text-sm md:text-base">
            Browse our curated collections of rings, necklaces, earrings, and more.
         </motion.p>
 
@@ -469,5 +469,6 @@ const ElegantAccordionOriginal = () => {
 }
 
 export default ElegantAccordionOriginal
+
 
 

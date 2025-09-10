@@ -729,6 +729,10 @@ function ProductsPage() {
   const debouncedSearchQuery = useDebounce(searchQuery, 300)
   const debouncedPriceRange = useDebounce(priceRange, 500)
 
+  useEffect(()=>{
+    window.scrollTo(0,0)
+  },[])
+
   const filteredProducts = useMemo(() => {
     return productsdata.filter((product) => {
       const matchesSearch = product.name.toLowerCase().includes(debouncedSearchQuery.toLowerCase())
@@ -874,13 +878,13 @@ function ProductsPage() {
         </CollapsibleTrigger>
         <CollapsibleContent className="space-y-2 mt-2">
           <Select value={selectedCategory} onValueChange={setSelectedCategory}>
-            <SelectTrigger className="bg-white border-slate-300 focus:border-amber-500 rounded-lg text-sm h-9">
+            <SelectTrigger className="bg-white border-slate-300 focus:border-amber-500 rounded-lg text-sm h-9 cursor-pointer">
               <SelectValue placeholder="All Categories" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="all">All Categories</SelectItem>
+              <SelectItem value="all" className="cursor-pointer">All Categories</SelectItem>
               {jewelryCategories.map((cat) => (
-                <SelectItem key={cat.id} value={cat.name}>
+                <SelectItem key={cat.id} value={cat.name}  className="cursor-pointer">
                   {cat.name}
                 </SelectItem>
               ))}
@@ -937,7 +941,7 @@ function ProductsPage() {
                   key={shape}
                   onClick={() => setSelectedDiamondShape(selectedDiamondShape === shape ? "" : shape)}
                   className={cn(
-                    "flex flex-col items-center p-2 rounded-lg border-2 transition-all duration-200 hover:shadow-md hover:bg-slate-50",
+                    "cursor-pointer flex flex-col items-center p-2 rounded-lg border-2 transition-all duration-200 hover:shadow-md hover:bg-slate-50",
                     selectedDiamondShape === shape
                       ? "border-amber-500 bg-amber-50 shadow-sm"
                       : "border-slate-200 bg-white hover:border-slate-300",
@@ -972,7 +976,7 @@ function ProductsPage() {
                   key={metal.name}
                   onClick={() => setSelectedMetalColor(selectedMetalColor === metal.name ? "" : metal.name)}
                   className={cn(
-                    "flex items-center w-full p-2 rounded-lg border-2 transition-all duration-200 hover:shadow-md hover:bg-slate-50",
+                    "cursor-pointer flex items-center w-full p-2 rounded-lg border-2 transition-all duration-200 hover:shadow-md hover:bg-slate-50",
                     selectedMetalColor === metal.name
                       ? "border-amber-500 bg-amber-50 shadow-sm"
                       : "border-slate-200 bg-white hover:border-slate-300",
@@ -1011,7 +1015,7 @@ function ProductsPage() {
                   key={stone.name}
                   onClick={() => setSelectedColorStone(selectedColorStone === stone.name ? "" : stone.name)}
                   className={cn(
-                    "flex flex-col items-center p-2 rounded-lg border-2 transition-all duration-200 hover:shadow-md hover:bg-slate-50",
+                    "cursor-pointer flex flex-col items-center p-2 rounded-lg border-2 transition-all duration-200 hover:shadow-md hover:bg-slate-50",
                     selectedColorStone === stone.name
                       ? "border-amber-500 bg-amber-50 shadow-sm"
                       : "border-slate-200 bg-white hover:border-slate-300",
@@ -1049,13 +1053,13 @@ function ProductsPage() {
           </CollapsibleTrigger>
           <CollapsibleContent className="space-y-2 mt-2">
             <Select value={selectedCarat} onValueChange={setSelectedCarat}>
-              <SelectTrigger className="bg-white border-slate-300 focus:border-amber-500 rounded-lg text-sm h-9">
+              <SelectTrigger className="bg-white border-slate-300 focus:border-amber-500 rounded-lg text-sm h-9 cursor-pointer">
                 <SelectValue placeholder="All Carats" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="all">All Carats</SelectItem>
+                <SelectItem value="all" className="cursor-pointer">All Carats</SelectItem>
                 {CaratOptions.map((carat) => (
-                  <SelectItem key={carat.value} value={carat.value}>
+                  <SelectItem key={carat.value} value={carat.value} className="cursor-pointer">
                     {carat.label}
                   </SelectItem>
                 ))}
@@ -1080,13 +1084,13 @@ function ProductsPage() {
           </CollapsibleTrigger>
           <CollapsibleContent className="space-y-2 mt-2">
             <Select value={selectedCollection} onValueChange={setSelectedCollection}>
-              <SelectTrigger className="bg-white border-slate-300 focus:border-amber-500 rounded-lg text-sm h-9">
+              <SelectTrigger className="bg-white border-slate-300 focus:border-amber-500 rounded-lg text-sm h-9 cursor-pointer">
                 <SelectValue placeholder="All Collections" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="all">All Collections</SelectItem>
+                <SelectItem value="all" className="cursor-pointer">All Collections</SelectItem>
                 {Collections.map((collection, index) => (
-                  <SelectItem key={index} value={collection.name}>
+                  <SelectItem key={index} value={collection.name} className="cursor-pointer">
                     {collection.name}
                   </SelectItem>
                 ))}

@@ -55,8 +55,8 @@ const Homesection6 = () => {
           initial={{ opacity: 0, y: -30 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -30 }}
           transition={{ duration: 0.8, ease: "easeOut" }}> 
-          <h1 className='text-3xl font-bold'>Explore Collections</h1>
-          <p className="text-gray-600 ">
+          <h1 className='text-2xl md:text-3xl font-bold'>Explore Collections</h1>
+          <p className="text-sm md:text-base text-gray-600 ">
             Discover timeless designs and modern elegance crafted to celebrate life’s most precious moments.  
             From everyday essentials to statement masterpieces, our collections are made to shine with you.
           </p>
@@ -79,7 +79,7 @@ const Homesection6 = () => {
               transition={{ type: "spring", stiffness: 300, damping: 20 }}
             >
               <motion.div
-                className="w-48 h-60 sm:w-56 sm:h-72 lg:w-64 lg:h-80 rounded-xl overflow-hidden shadow-md mx-auto cursor-pointer"
+                className="w-40 h-60 sm:w-56 sm:h-72 lg:w-64 lg:h-80 rounded-xl overflow-hidden shadow-md mx-auto cursor-pointer"
                 whileHover="hover"
               >
                 <motion.img
